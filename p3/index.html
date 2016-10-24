@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Dot</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div ng-app="TheDot">
+		<h3>The following inputs binded to the model "data.message" and the updates affect the models across all the scopes</h3>
+		<input type="text" ng-model="data.message">
+		<p>{{data.message}}</p>
+		<div ng-controller="firstctrl">
+		<input type="text" ng-model="data.message">
+		<p>{{data.message}}</p>
+		</div>
+		<div ng-controller="secondctrl">
+		<input type="text" ng-model="data.message">
+		<p>{{data.message}}</p>
+		</div>
+		<h3>The following inputs binded to the model "message" without THE DOT, the updates just affect the individual scope without any communications</h3>
+		<input type="text" ng-model="message">
+		<p>{{message}}</p>
+		<div ng-controller="firstctrl">
+		<input type="text" ng-model="message">
+		<p>{{message}}</p>
+		</div>
+		<div ng-controller="secondctrl">
+		<input type="text" ng-model="message">
+		<p>{{message}}</p>
+		</div>
+	</div>
+</body>
+<script src="http://cdn.bootcss.com/angular.js/1.5.3/angular.min.js"></script>
+<script src="main.js"></script>
+</html>

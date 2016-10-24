@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create a filter</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div ng-app="CreateFilter">
+		<div ng-controller="AvengerCtrl">
+			Type to search: <input type="text" ng-model="searchText">
+			<table class="table table-bordered">
+				<tr ng-repeat="actor in Avengers.cast | filter:searchText">
+					<td>{{actor.Name}}</td>
+					<td>{{actor.Character}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+<script src="http://cdn.bootcss.com/angular.js/1.5.3/angular.min.js"></script>
+<script src="main.js"></script>
+</html>
